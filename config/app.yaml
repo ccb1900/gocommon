@@ -1,0 +1,10 @@
+debug: false
+log:
+  level: info
+  path: /tmp
+  roate:
+    max_size: 100
+    max_age: 1
+    max_backups: 1
+    compress: true
+    localtime: true
