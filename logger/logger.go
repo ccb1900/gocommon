@@ -6,7 +6,7 @@ import (
 	"os"
 	"sync"
 
-	"gocommon/config"
+	"github.com/ccb1900/gocommon/config"
 
 	"gopkg.in/natefinch/lumberjack.v2"
 )

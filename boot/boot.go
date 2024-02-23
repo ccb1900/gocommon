@@ -3,9 +3,9 @@ package boot
 import (
 	"log"
 
-	"gocommon/config"
-	"gocommon/env"
-	"gocommon/logger"
+	"github.com/ccb1900/gocommon/config"
+	"github.com/ccb1900/gocommon/env"
+	"github.com/ccb1900/gocommon/logger"
 )
 
 func Boot(appname, stage string) {

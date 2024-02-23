@@ -1,4 +1,4 @@
-module gocommon
+module github.com/ccb1900/gocommon
 
 go 1.21.1
 
