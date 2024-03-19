@@ -63,7 +63,7 @@ func setDefaultLogConfig(l *LogConfig) {
 		l.Level = "info"
 	}
 	if l.Path == "" {
-		l.Level = "app.log"
+		l.Path = "logs/app.log"
 	}
 
 	if l.Roate == nil {
