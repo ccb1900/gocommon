@@ -7,6 +7,7 @@ require (
 	github.com/oklog/ulid/v2 v2.1.0
 	github.com/spf13/viper v1.18.2
 	github.com/urfave/cli/v2 v2.27.1
+	golang.org/x/crypto v0.18.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 )
 

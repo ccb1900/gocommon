@@ -1,11 +1,13 @@
 package clix
 
 import (
+	"fmt"
 	"os"
 	"text/template"
 
 	"github.com/ccb1900/gocommon/logger"
 	"github.com/urfave/cli/v2"
+	"golang.org/x/crypto/bcrypt"
 )
 
 type CliApp struct {
@@ -97,6 +99,30 @@ func (c *CliApp) AddSysService() {
 
 			logger.Default().Info("create service success")
 
+			return nil
+		},
+	})
+}
+
+func (c *CliApp) AddGenPassword() {
+	c.instance.Commands = append(c.instance.Commands, &cli.Command{
+		Name:  "gen:password",
+		Usage: "gen password",
+		Flags: []cli.Flag{
+			&cli.StringFlag{
+				Name:     "src",
+				Required: true,
+				Usage:    "password",
+				Aliases:  []string{"s"},
+			},
+		},
+		Action: func(c *cli.Context) error {
+			res, err := bcrypt.GenerateFromPassword([]byte(c.String("desc")), bcrypt.DefaultCost)
+			if err != nil {
+				return err
+			}
+
+			fmt.Println(string(res))
 			return nil
 		},
 	})

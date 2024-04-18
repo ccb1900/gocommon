@@ -45,6 +45,7 @@ func Init(appname string) {
 	v.SetConfigName("app")               // name of config file (without extension)
 	v.SetConfigType("yaml")              // REQUIRED if the config file does not have the extension in the name
 	v.AddConfigPath("./res")             // path to look for the config file in
+	v.AddConfigPath("../res")            // path to look for the config file in
 	v.AddConfigPath("/etc/" + appname)   // path to look for the config file in
 	v.AddConfigPath("$HOME/." + appname) // call multiple times to add many search paths
 	v.AddConfigPath(".")                 // optionally look for config in the working directory
@@ -63,7 +64,7 @@ func setDefaultLogConfig(l *LogConfig) {
 		l.Level = "info"
 	}
 	if l.Path == "" {
-		l.Path = "logs/app.log"
+		l.Path = "storage/logs/app.log"
 	}
 
 	if l.Roate == nil {
